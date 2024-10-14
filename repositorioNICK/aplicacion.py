@@ -2,7 +2,7 @@
 """
 Created on Mon Oct 14 16:09:04 2024
 
-@author: Alumno
+@author: Nick
 """
 
 
@@ -65,12 +65,12 @@ def agregar_personas():
     nombre = input("Ingrese el nombre de la persona: ")
     apellido = input("Ingrese el apellido de la persona: ")
 
-    # Validación simple para evitar datos vacíos
+    
     if not dni or not nombre or not apellido:
         print("Error: Todos los campos deben ser llenados.")
         return
 
-    # Agregar los datos a los archivos
+   
     with open("dni.txt", "a") as dni_file, open("nombre.txt", "a") as nombre_file, open("apellido.txt", "a") as apellido_file:
         dni_file.write(dni + "\n")
         nombre_file.write(nombre + "\n")
@@ -80,17 +80,17 @@ def agregar_personas():
 
 def main():
     """Función principal del programa."""
-    logins, claves = cargar_datos()  # Cargar logins y claves desde archivos
+    logins, claves = cargar_datos()  
 
-    if validar_login(logins, claves):  # Validar las credenciales
+    if validar_login(logins, claves): 
         while True:
-            mostrar_menu()  # Mostrar el menú
+            mostrar_menu()  
             opcion = input("Seleccione una opción: ")
 
             if opcion == "1":
-                listar_personas()  # Listar personas
+                listar_personas() 
             elif opcion == "2":
-                agregar_personas()  # Agregar personas
+                agregar_personas()  
             elif opcion == "3":
                 print("Saliendo del programa...")
                 break
